@@ -4,17 +4,40 @@
 <style>
   body {
     background-color: #F08080; /* Soft red color */
- font-family: Arial, sans-serif;
-            font-size: 16px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    margin: 0; /* Remove default margin for better responsiveness */
+  }
+
+  /* Media Query for Mobile Devices */
+  @media only screen and (max-width: 768px) {
+    .equation-container {
+      display: flex; /* Arrange inputs and button horizontally */
+      flex-direction: column; /* Stack them on top of each other on mobile */
+    }
+
+    .equation-container label,
+    .equation-container input,
+    .equation-container button {
+      width: 100%; /* Make elements full width on mobile */
+      margin-bottom: 10px; /* Add some spacing between elements */
+    }
+
+    h1 {
+      font-size: 20px; /* Adjust heading size for smaller screens */
+    }
+
+    h3 {
+      font-size: 14px; /* Adjust subheading size for smaller screens */
+    }
   }
 </style>
 </head>
 <body>
- <h1>BO6 Zombies Beamsmasher Code Solver</h1>
-<br>
- <h3 class="link-header"><a href="https://YouTube.com/Joemet123">Subscribe To Joemet123</a></h3>
+  <h1>BO6 Zombies Beamsmasher Code Solver</h1>
+  <br>
+  <h3 class="link-header"><a href="https://YouTube.com/Joemet123">Subscribe To Joemet123</a></h3>
   <div class="equation-container">
-	<br>
     <label for="x1">x:</label>
     <input type="number" id="x1">
     <label for="y1">y:</label>
@@ -28,38 +51,7 @@
   </div>
   <script>
     function calculateEquations() {
-      const x = parseFloat(document.getElementById("x1").value);
-      const y = parseFloat(document.getElementById("y1").value);
-      const z = parseFloat(document.getElementById("z1").value);
-
-      // Define your equations as functions
-      function expression1(x, y, z) {
-        return 2 * x + 11;
-      }
-
-      function expression2(x, y, z) {
-        return (2 * z + y) - 5;
-      }
-
-      function expression3(x, y, z) {
-        return Math.abs((y + z) - x);
-      }
-
-      // Calculate and display results with error handling and formatting
-      try {
-        const result1 = expression1(x, y, z);
-        const result2 = expression2(x, y, z);
-        const result3 = expression3(x, y, z);
-
-        document.getElementById("result1").textContent = `Result 1: ${result1.toFixed(2)}`;
-        document.getElementById("result2").textContent = `Result 2: ${result2.toFixed(2)}`;
-        document.getElementById("result3").textContent = `Result 3: ${result3.toFixed(2)}`;
-      } catch (error) {
-        console.error("Error calculating equations:", error);
-        document.getElementById("result1").textContent = "Error calculating equation 1.";
-        document.getElementById("result2").textContent = "Error calculating equation 2.";
-        document.getElementById("result3").textContent = "Error calculating equation 3.";
-      }
+      // ... your existing code to calculate and display results ...
     }
   </script>
 </body>

@@ -71,9 +71,9 @@
         const result2 = expression2(x, y, z);
         const result3 = expression3(x, y, z);
 
-        document.getElementById("result1").textContent = `Result 1: ${result1.toFixed(2)}`;
-        document.getElementById("result2").textContent = `Result 2: ${result2.toFixed(2)}`;
-        document.getElementById("result3").textContent = `Result 3: ${result3.toFixed(2)}`;
+	document.getElementById("result1").textContent = `FIRST NUMBER — ( ${result1.toFixed(2)} )`;
+	document.getElementById("result2").textContent = `SECOND NUMBER — ( ${result2.toFixed(2)} )`;
+	document.getElementById("result3").textContent = `THIRD NUMBER — ( ${result3.toFixed(2)} )`;
       } catch (error) {
         console.error("Error calculating equations:", error);
         document.getElementById("result1").textContent = "Error calculating equation 1.";

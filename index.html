@@ -12,16 +12,21 @@
     margin-left: 20px;
   }
 
+  /* Apply 3x multiplier to most elements */
   .equation-container label,
   .equation-container input,
-  .equation-container button {
+  .equation-container button,
+  .equation-container p {
     display: block;
     margin-bottom: 10px;
-    font-size: 18px; /* Increased font size for input elements */
+    font-size: calc(18px * 2); /* Use calc() for dynamic multiplication */
+    line-height: calc(18px * 2); /* Adjust line height for spacing */
+    padding: calc(10px * 2); /* Increase padding for buttons */
   }
 
-  button {
-    padding: 10px 20px; /* Increased button padding */
+  /* Exclude the main heading from size changes */
+  h1 {
+    font-size: 36px; /* Maintain original size */
   }
 </style>
 </head>

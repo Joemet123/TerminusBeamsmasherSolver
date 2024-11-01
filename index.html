@@ -5,44 +5,36 @@
   body {
     background-color: #F08080; /* Soft red color */
     font-family: Arial, sans-serif;
-    font-size: 16px;
-    margin: 0; /* Remove default margin for better responsiveness */
+    font-size: 20px; /* Increased font size for better readability */
   }
 
-  /* Media Query for Mobile Devices */
-  @media only screen and (max-width: 768px) {
-    .equation-container {
-      display: flex; /* Arrange inputs and button horizontally */
-      flex-direction: column; /* Stack them on top of each other on mobile */
-    }
+  .equation-container {
+    margin-left: 20px;
+  }
 
-    .equation-container label,
-    .equation-container input,
-    .equation-container button {
-      width: 100%; /* Make elements full width on mobile */
-      margin-bottom: 10px; /* Add some spacing between elements */
-    }
+  .equation-container label,
+  .equation-container input,
+  .equation-container button {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px; /* Increased font size for input elements */
+  }
 
-    h1 {
-      font-size: 20px; /* Adjust heading size for smaller screens */
-    }
-
-    h3 {
-      font-size: 14px; /* Adjust subheading size for smaller screens */
-    }
+  button {
+    padding: 10px 20px; /* Increased button padding */
   }
 </style>
 </head>
 <body>
-  <h1>BO6 Zombies Beamsmasher Code Solver</h1>
+  <h1 style="font-size: 36px;">BO6 Zombies Beamsmasher Code Solver</h1>
   <br>
-  <h3 class="link-header"><a href="https://YouTube.com/Joemet123">Subscribe To Joemet123</a></h3>
+  <h3 style="font-size: 24px;" class="link-header"><a href="https://YouTube.com/Joemet123">Subscribe To Joemet123</a></h3>
   <div class="equation-container">
-    <label for="x1">x:</label>
+    <label for="x1">X Symbol Number:</label>
     <input type="number" id="x1">
-    <label for="y1">y:</label>
+    <label for="y1">Y Symbol Number:</label>
     <input type="number" id="y1">
-    <label for="z1">z:</label>
+    <label for="z1">Z Symbol Number:</label>
     <input type="number" id="z1">
     <button onclick="calculateEquations()">Calculate</button>
     <p id="result1"></p>
@@ -51,7 +43,38 @@
   </div>
   <script>
     function calculateEquations() {
-      // ... your existing code to calculate and display results ...
+      const x = parseFloat(document.getElementById("x1").value);
+      const y = parseFloat(document.getElementById("y1").value);
+      const z = parseFloat(document.getElementById("z1").value);
+
+      // Define your equations as functions
+      function expression1(x, y, z) {
+        return 2 * x + 11;
+      }
+
+      function expression2(x, y, z) {
+        return (2 * z + y) - 5;
+      }
+
+      function expression3(x, y, z) {
+        return Math.abs((y + z) - x);
+      }
+
+      // Calculate and display results with error handling and formatting
+      try {
+        const result1 = expression1(x, y, z);
+        const result2 = expression2(x, y, z);
+        const result3 = expression3(x, y, z);
+
+        document.getElementById("result1").textContent = `Result 1: ${result1.toFixed(2)}`;
+        document.getElementById("result2").textContent = `Result 2: ${result2.toFixed(2)}`;
+        document.getElementById("result3").textContent = `Result 3: ${result3.toFixed(2)}`;
+      } catch (error) {
+        console.error("Error calculating equations:", error);
+        document.getElementById("result1").textContent = "Error calculating equation 1.";
+        document.getElementById("result2").textContent = "Error calculating equation 2.";
+        document.getElementById("result3").textContent = "Error calculating equation 3.";
+      }
     }
   </script>
 </body>
